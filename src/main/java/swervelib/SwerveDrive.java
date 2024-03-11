@@ -625,7 +625,7 @@ public class SwerveDrive
     // angle
     // given as the robot angle reverses the direction of rotation, and the conversion is reversed.
     return ChassisSpeeds.fromFieldRelativeSpeeds(
-        kinematics.toChassisSpeeds(getStates()), getOdometryHeading().unaryMinus());
+        kinematics.toChassisSpeeds(getStates()), getOdometryHeading().unaryMinus()) ;
   }
 
   /**
