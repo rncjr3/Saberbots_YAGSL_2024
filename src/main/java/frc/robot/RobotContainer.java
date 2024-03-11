@@ -109,7 +109,7 @@ public class RobotContainer
     driverXbox.povRight().onTrue(new InstantCommand(() -> m_ShooterSubsystem.shootBottom()));
     driverXbox.povLeft().onTrue(new InstantCommand(() -> m_ShooterSubsystem.shootSlow()));
     driverXbox.povDown().onTrue(new InstantCommand(() -> m_ShooterSubsystem.intake()));
-    driverXbox.leftStick().onTrue(new InstantCommand(() -> m_ShooterSubsystem.stopShooter()));
+    driverXbox.rightStick().onTrue(new InstantCommand(() -> m_ShooterSubsystem.stopShooter()));
     
     //driverXbox.leftBumper().toggleOnTrue(new InstantCommand(() -> hang.pullDown()));
   }

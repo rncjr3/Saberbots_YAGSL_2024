@@ -20,13 +20,13 @@ public class ShooterSubsystem extends SubsystemBase{
     }
 
     public void shootSlow(){
-        TopShooterMotor.set(1);
-        BottomShooterMotor.set(-1);
+        TopShooterMotor.set(0.15);
+        BottomShooterMotor.set(-0.15);
     }
 
     public void intake(){
-        TopShooterMotor.set(1);
-        BottomShooterMotor.set(-1);
+        TopShooterMotor.set(-0.2);
+        BottomShooterMotor.set(0.2);
     }
 
     public void stopShooter(){
