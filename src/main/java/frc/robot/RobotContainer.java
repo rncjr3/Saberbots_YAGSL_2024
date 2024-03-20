@@ -115,7 +115,6 @@ public class RobotContainer
    */
   private void configureBindings()
   {
-    // Schedule `ExampleCommand` when `exampleCondition` changes to `true`
 
     // Gyro keybind
     driverXbox.a().onTrue((Commands.runOnce(drivebase::zeroGyro)));
@@ -138,9 +137,6 @@ public class RobotContainer
     }));
   }
 
-    //public void binding(){
-        //if(driverXbox.leftBumper()
-    //}//
   /**
    * Use this to pass the autonomous command to the main {@link Robot} class.
    *
