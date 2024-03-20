@@ -113,7 +113,11 @@ public class RobotContainer
     driverXbox.povLeft().onTrue(new InstantCommand(() -> m_ShooterSubsystem.shootSlow()));
     driverXbox.povDown().onTrue(new InstantCommand(() -> m_ShooterSubsystem.intake()));
     driverXbox.rightStick().onTrue(new InstantCommand(() -> m_ShooterSubsystem.stopShooter()));
-    
+    driverXbox.povUpLeft().onTrue(new InstantCommand(() -> {
+      System.out.println("Lights set to blue");
+      this.ledRevBlinking.setLightsToBlue();
+    }));
+
     //driverXbox.leftBumper().toggleOnTrue(new InstantCommand(() -> hang.pullDown()));
   }
 
@@ -145,6 +149,9 @@ public class RobotContainer
    * Sets the lights to blue.
    */
   public class RevBlinking {
+    /**
+     * Constructor for this class
+     */
     public RevBlinking() {
       // Constructor for future implementation.
       System.out.println("Initiating Lights.");
