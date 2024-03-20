@@ -48,7 +48,6 @@ public class RobotContainer
   {
     // Configure the trigger bindings
     configureBindings();
-    ledRevBlinking.setDefaultLights();
     
     AbsoluteDriveAdv closedAbsoluteDriveAdv = new AbsoluteDriveAdv(drivebase,
     () -> -MathUtil.applyDeadband(driverXbox.getLeftY(),
@@ -113,7 +112,7 @@ public class RobotContainer
     driverXbox.povLeft().onTrue(new InstantCommand(() -> m_ShooterSubsystem.shootSlow()));
     driverXbox.povDown().onTrue(new InstantCommand(() -> m_ShooterSubsystem.intake()));
     driverXbox.rightStick().onTrue(new InstantCommand(() -> m_ShooterSubsystem.stopShooter()));
-    driverXbox.povUpLeft().onTrue(new InstantCommand(() -> {
+    driverXbox.x().onTrue(new InstantCommand(() -> {
       System.out.println("Lights set to blue");
       this.ledRevBlinking.setLightsToBlue();
     }));
@@ -150,18 +149,42 @@ public class RobotContainer
    * Sets the lights to blue.
    */
   public class RevBlinking {
-    /**
-     * Constructor for this class
-     */
-    public RevBlinking() {
-      // Constructor for future implementation.
-      System.out.println("Initiating Lights.");
-    }
 
     /**
      * Creates a Spark object for the rev blinking led strip.
      */
     private final Spark ledLight = new Spark(0);
+
+    /**
+     * Constructor for this RevBlinking.
+     * Sets lights to default color (white).
+     */
+    public RevBlinking() {
+      // Constructor for future implementation.
+      this.setDefaultLights();
+    }
+
+    /**
+     * Sets the led lights to default (white).
+     */
+    public void setDefaultLights() {
+      this.ledLight.set(.93);
+    }
+
+    /**
+     * Sets the led lights to blue.
+     */
+    public void setLightsToBlue() {
+      this.ledLight.set(87);
+    }
+  }
+    /**
+     * Constructor for this class
+     */
+    public RevBlinking() {
+      // Constructor for future implementation.
+      this.setDefaultLights();
+    }
 
     /**
      * Sets the led lights to default (white).
