@@ -53,6 +53,7 @@ public class ShooterSubsystem extends SubsystemBase{
     }
 
     public void shootAMP(){
+        System.out.println("Shooting amp");
         timer.reset();
         timer.start();
         while(timer.get()<2){
