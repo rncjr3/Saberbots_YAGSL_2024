@@ -155,9 +155,9 @@ public class RobotContainer
      */
     private final Spark ledLight = new Spark(0);
 
-    /**
+    /** 
      * Constructor for this RevBlinking.
-     * Sets lights to default color (white).
+     * Sets the lights to default color (white)
      */
     public RevBlinking() {
       // Constructor for future implementation.
@@ -178,26 +178,4 @@ public class RobotContainer
       this.ledLight.set(87);
     }
   }
-    /**
-     * Constructor for this class
-     */
-    public RevBlinking() {
-      // Constructor for future implementation.
-      this.setDefaultLights();
-    }
-
-    /**
-     * Sets the led lights to default (white).
-     */
-    public void setDefaultLights() {
-      this.ledLight.set(.93);
-    }
-
-    /**
-     * Sets the led lights to blue.
-     */
-    public void setLightsToBlue() {
-      this.ledLight.set(87);
-    }
-  }  
 }
