@@ -113,7 +113,7 @@ public class RobotContainer
     driverXbox.povLeft().onTrue(new InstantCommand(() -> m_ShooterSubsystem.shootSlow()));
     driverXbox.povDown().onTrue(new InstantCommand(() -> m_ShooterSubsystem.intake()));
     driverXbox.rightStick().onTrue(new InstantCommand(() -> m_ShooterSubsystem.stopShooter()));
-    driverXbox.povUpLeft().onTrue(new InstantCommand(() -> {
+    driverXbox.x().onTrue(new InstantCommand(() -> {
       System.out.println("Lights set to blue");
       this.ledRevBlinking.setLightsToBlue();
     }));
