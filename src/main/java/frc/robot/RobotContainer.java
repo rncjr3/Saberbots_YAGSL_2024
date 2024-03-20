@@ -117,7 +117,7 @@ public class RobotContainer
   {
     // Schedule `ExampleCommand` when `exampleCondition` changes to `true`
 
-        // Gyro keybind
+    // Gyro keybind
     driverXbox.a().onTrue((Commands.runOnce(drivebase::zeroGyro)));
 
     // Hanging keybinds
@@ -137,11 +137,6 @@ public class RobotContainer
       this.ledRevBlinking.setLightsToBlue();
     }));
     
-    driverXbox.x().onTrue(new InstantCommand(() -> {
-      System.out.println("Lights set to blue");
-      this.ledRevBlinking.setLightsToBlue();
-    }));
-
     // weohdowiejdwoiefjwoien
     //driverXbox.leftBumper().toggleOnTrue(new InstantCommand(() -> hang.pullDown()));
   }
