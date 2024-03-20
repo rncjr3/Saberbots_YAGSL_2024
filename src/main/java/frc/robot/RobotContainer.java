@@ -100,16 +100,16 @@ public class RobotContainer
     // Schedule `ExampleCommand` when `exampleCondition` changes to `true`
 
     driverXbox.a().onTrue((Commands.runOnce(drivebase::zeroGyro)));
-    // driverXbox.x().whileTrue(Commands.runOnce(drivebase::lock, drivebase).repeatedly());
-    //driverXbox.leftBumpter().onTrue(new InstantCommand(() -> hang.pullDown()));
     driverXbox.leftBumper().onTrue(new InstantCommand(() -> hang.pullDown()));
     driverXbox.rightBumper().onTrue(new InstantCommand(() -> hang.pullUP()));
     driverXbox.y().onTrue(new InstantCommand(() -> hang.stopPull()));
-    driverXbox.povUp().onTrue(new InstantCommand(() -> m_ShooterSubsystem.shootTop()));
-    driverXbox.povRight().onTrue(new InstantCommand(() -> m_ShooterSubsystem.shootBottom()));
-    driverXbox.povLeft().onTrue(new InstantCommand(() -> m_ShooterSubsystem.shootSlow()));
+    
     driverXbox.povDown().onTrue(new InstantCommand(() -> m_ShooterSubsystem.intake()));
-    driverXbox.rightStick().onTrue(new InstantCommand(() -> m_ShooterSubsystem.stopShooter()));
+    driverXbox.povLeft().onTrue(new InstantCommand(() -> m_ShooterSubsystem.stopShooter()));
+    driverXbox.povUp().onTrue(new InstantCommand(() -> m_ShooterSubsystem.shootSpeaker()));
+    driverXbox.povRight().onTrue(new InstantCommand(() -> m_ShooterSubsystem.shootAMP()));
+
+
     
     //driverXbox.leftBumper().toggleOnTrue(new InstantCommand(() -> hang.pullDown()));
   }
