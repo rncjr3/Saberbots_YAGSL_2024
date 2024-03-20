@@ -136,9 +136,6 @@ public class RobotContainer
       System.out.println("Lights set to blue");
       this.ledRevBlinking.setLightsToBlue();
     }));
-    
-    // weohdowiejdwoiefjwoien
-    //driverXbox.leftBumper().toggleOnTrue(new InstantCommand(() -> hang.pullDown()));
   }
 
     //public void binding(){
