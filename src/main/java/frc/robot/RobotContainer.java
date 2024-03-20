@@ -10,6 +10,7 @@ import edu.wpi.first.math.geometry.Rotation2d;
 import edu.wpi.first.math.geometry.Translation2d;
 import edu.wpi.first.wpilibj.Filesystem;
 import edu.wpi.first.wpilibj.RobotBase;
+import edu.wpi.first.wpilibj.motorcontrol.Spark;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.Commands;
 import edu.wpi.first.wpilibj2.command.InstantCommand;
@@ -35,6 +36,7 @@ public class RobotContainer
                                                                          "swerve/neo"));
   private final HangerSubsystem hang = new HangerSubsystem();
   private final ShooterSubsystem m_ShooterSubsystem = new ShooterSubsystem();
+  private final RevBlinking ledRevBlinking = new RevBlinking();
 
   // Replace with CommandPS4Controller or CommandJoystick if needed
   final CommandXboxController driverXbox = new CommandXboxController(0);
@@ -46,7 +48,8 @@ public class RobotContainer
   {
     // Configure the trigger bindings
     configureBindings();
-
+    ledRevBlinking.setDefaultLights();
+    
     AbsoluteDriveAdv closedAbsoluteDriveAdv = new AbsoluteDriveAdv(drivebase,
     () -> -MathUtil.applyDeadband(driverXbox.getLeftY(),
     OperatorConstants.LEFT_Y_DEADBAND),
@@ -137,4 +140,33 @@ public class RobotContainer
   {
     drivebase.setMotorBrake(brake);
   }
+
+  /**
+   * Sets the lights to blue.
+   */
+  public class RevBlinking {
+    public RevBlinking() {
+      // Constructor for future implementation.
+      System.out.println("Initiating Lights.");
+    }
+
+    /**
+     * Creates a Spark object for the rev blinking led strip.
+     */
+    private final Spark ledLight = new Spark(0);
+
+    /**
+     * Sets the led lights to default (white).
+     */
+    public void setDefaultLights() {
+      this.ledLight.set(.93);
+    }
+
+    /**
+     * Sets the led lights to blue.
+     */
+    public void setLightsToBlue() {
+      this.ledLight.set(87);
+    }
+  }  
 }
